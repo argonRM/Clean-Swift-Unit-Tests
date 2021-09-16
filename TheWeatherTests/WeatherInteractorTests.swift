@@ -30,18 +30,18 @@ class WeatherInteractorTests: XCTestCase {
         //then
         switch try XCTUnwrap(result) {
         case .success(let response):
-            XCTAssertNotNil(response.temperature, "Поле temperature должно распарситься")
-            XCTAssertNotNil(response.rain, "Поле rain должно распарситься")
-            XCTAssertNotNil(response.thunder, "Поле thunder должно распарситься")
+            XCTAssertNotNil(response.temperature, "temperature must be parsed")
+            XCTAssertNotNil(response.rain, "rain must be parsed")
+            XCTAssertNotNil(response.thunder, "thunder must be parsed")
         case .failure:
-            XCTFail("Результат не должен быть ошибкой")
+            XCTFail("The result must not be failure")
         }
     }
     
     func testGetUserLocation() throws {
         //given
         let request = Weather.GetWeather.Request()
-        ///Симуляция того что разрешение на получение локации получено и определена реальная локация пользователя
+        ///Simulation of the fact that permission to obtain a location is received and the real location of the user is determined
         provider.isUserLocationEnabled = true
         
         //when
@@ -49,14 +49,14 @@ class WeatherInteractorTests: XCTestCase {
         let providerRequest = provider.providerRequest
         
         //then
-        XCTAssertEqual(try XCTUnwrap(providerRequest?.location), "50.0001;37.0001", "Проверяет что локация пользователя переданная в провайдер для запроса, соответствует моковым данным")
+        XCTAssertEqual(try XCTUnwrap(providerRequest?.location), "50.0001;37.0001", "Checking that the user's location passed to the provider for the request matches the mock data")
     }
     
     func testGetDefaultLocation() throws {
         //given
         let request = Weather.GetWeather.Request()
-        ///Симуляция того что разрешение на получение локации НЕ получено, взята дефолтная локация,
-        ///хранящаяся в публичном свойстве провайдера defaultLocation
+        ///Simulation of the fact that permission to obtain a location is NOT received, the default location is taken,
+        ///stored in the provider's public property defaultLocation
         provider.isUserLocationEnabled = false
         
         //when
@@ -64,7 +64,7 @@ class WeatherInteractorTests: XCTestCase {
         let providerRequest = provider.providerRequest
         
         //then
-        XCTAssertEqual(try XCTUnwrap(providerRequest?.location), "49.9808;36.2527", "Проверяет что локация пользователя переданная в провайдер для запроса, соответствует дефолтной локации")
+        XCTAssertEqual(try XCTUnwrap(providerRequest?.location), "49.9808;36.2527", "Checking that the user's location passed to the provider for the request matches the default location")
     }
     
     func testDateForRequest() throws {
@@ -76,6 +76,7 @@ class WeatherInteractorTests: XCTestCase {
         let providerRequest = provider.providerRequest
         
         //then
-        XCTAssertEqual(try XCTUnwrap(providerRequest?.date), "202108031200", "Проверяет что строковое представление дата переданное в провайдер для запроса, обработано интерактором правильно")
+        XCTAssertEqual(try XCTUnwrap(providerRequest?.date), "202108031200", "Checking that the string representation of the date passed to the provider for the request is processed correctly by the interactor")
     }
 }
+

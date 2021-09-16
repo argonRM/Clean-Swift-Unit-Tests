@@ -33,7 +33,7 @@ class WeatherPresenterTests: XCTestCase {
             XCTAssertEqual(viewModel.rain, .heavy)
             XCTAssertEqual(viewModel.thunderStorm, .violent)
         default:
-            XCTFail("Стейт выбран неправильно, должен быть showWeather")
+            XCTFail("The state is not right, it must be showWeather")
         }
     }
 }

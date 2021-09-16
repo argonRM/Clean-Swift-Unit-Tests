@@ -48,13 +48,11 @@ class WeatherProvider: NSObject, WeatherProviderProtocol {
     }
     
     func getUserLocation(completion: @escaping (Weather.GetLocationRequestResult) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            guard let currentLocation = self?.currentLocation else {
+            guard let currentLocation = currentLocation else {
                 completion(.failure)
                 return
             }
             completion(.success(currentLocation))
-        }
     }
 }
 

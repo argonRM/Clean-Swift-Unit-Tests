@@ -220,8 +220,6 @@
 			children = (
 				CEC24D3726B72F8D009E3207 /* EndPoints */,
 				CEC24D3926B72F8D009E3207 /* WeatherResponseModel.swift */,
-				CEC24D3A26B72F8D009E3207 /* Managers_Services */,
-				CEC24D3B26B72F8D009E3207 /* NetworkDelegates */,
 			);
 			path = NetworkingLayer;
 			sourceTree = "<group>";
@@ -232,20 +230,6 @@
 				CEC24D3826B72F8D009E3207 /* GetWeatherEndPoint.swift */,
 			);
 			path = EndPoints;
-			sourceTree = "<group>";
-		};
-		CEC24D3A26B72F8D009E3207 /* Managers_Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers_Services;
-			sourceTree = "<group>";
-		};
-		CEC24D3B26B72F8D009E3207 /* NetworkDelegates */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NetworkDelegates;
 			sourceTree = "<group>";
 		};
 		CEC24D3C26B72F8D009E3207 /* NetworkingLibrary */ = {
