@@ -14,3 +14,30 @@ All objects are owned by each other through protocols. This makes testing very e
 
 ### ViewController
 <img width="440" alt="Screenshot 2024-02-27 at 11 02 19 PM" src="https://github.com/argonRM/TheWeatherExample/assets/39482176/a98d7328-669e-4faa-87f4-bcb697a8c449">
+
+## Unit tests
+If we look at the example of testing the Interactor, here I use a certain mock object of a provider, which instead of going to the internet, takes a pre-written JSON file, simulating an internet request. It also takes a hardcoded user location.
+
+<img width="1062" alt="Screenshot 2024-02-27 at 11 58 05 PM" src="https://github.com/argonRM/TheWeatherExample/assets/39482176/f176b83c-78e3-4d72-9ac1-488ae63f32ae">
+
+I also use a so-called spy object instead of the presenter, which implements WeatherPresentationLogic. This object does not take any active actions but simply stores the received result. Based on this result, we can understand if it corresponds to the expected one. This is the essence of the test.
+
+<img width="476" alt="Screenshot 2024-02-27 at 11 58 14 PM" src="https://github.com/argonRM/TheWeatherExample/assets/39482176/330934bc-8a9e-4658-9031-1ee995503cda">
+
+Here you can see an example of unit tests for the interactor, specifically the test method for getting weather data. Using comments, I've divided the test function in
+to logical parts.
+
+<img width="727" alt="Screenshot 2024-02-28 at 12 00 43 AM" src="https://github.com/argonRM/TheWeatherExample/assets/39482176/525fb39e-c942-48e2-81f9-6bbcc8ab98a3">
+
+### Given-When-Then
+Given-When-Then (GWT) is an approach to structuring automated tests. Each part of the structure serves a specific purpose:
+
+Given: Defines the initial state of the system or the preconditions necessary for the test to run. This may include setting certain values, creating objects, or any preparatory work.
+
+When: Describes the event or action that causes a change in the system's state. This could be calling a method or interacting with the system in some other way.
+
+Then: Checks the expected outcome after the event or action has occurred. This is where assertions are made to ensure that the system behaves as expected.
+
+Using GWT helps improve understanding of test scenarios and makes them easier to maintain and extend.
+
+
