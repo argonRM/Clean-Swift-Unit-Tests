@@ -40,4 +40,5 @@ Then: Checks the expected outcome after the event or action has occurred. This i
 
 Using GWT helps improve understanding of test scenarios and makes them easier to maintain and extend.
 
-
+### Сonclusion
+For a more detailed understanding of the Clean Swift architecture and unit tests for this architecture, you can download this project and see how everything fits together.
