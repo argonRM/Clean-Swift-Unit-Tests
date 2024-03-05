@@ -42,3 +42,15 @@ Using GWT helps improve understanding of test scenarios and makes them easier to
 
 ### Сonclusion
 For a more detailed understanding of the Clean Swift architecture and unit tests for this architecture, you can download this project and see how everything fits together.
+
+## Developed By
+Roman Maiboroda
+
+## License
+Copyright 2024 Roman Maiboroda.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
